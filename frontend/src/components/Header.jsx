@@ -88,8 +88,8 @@ const Header = () => {
               alt="Gadget Headquarters" 
               className="h-10 md:h-12 w-auto object-contain"
             />
-            <div className="hidden sm:block">
-              <h1 className="text-lg md:text-xl font-bold text-gray-900 leading-tight">
+            <div className="block">
+              <h1 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 leading-tight">
                 Gadget HQ
               </h1>
               <p className="text-[8px] md:text-[10px] text-gray-500 leading-none">Nigeria Limited</p>
