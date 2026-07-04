@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, ChevronDown, ShoppingCart, Heart, User, Menu, X, Globe, DollarSign, Phone, AlertCircle } from 'lucide-react';
+import { Search, ChevronDown, ShoppingCart, Heart, User, Menu, X, Globe, DollarSign, Phone, AlertCircle, Clock, MapPin } from 'lucide-react';
 import logo from '../assets/images/logo.jpg';
 
 const Header = () => {
@@ -350,7 +350,7 @@ const Header = () => {
       )}
 
       {/* CSS Animations */}
-      <style jsx>{`
+      <style>{`
         @keyframes slideDown {
           from { opacity: 0; transform: translateY(-20px); }
           to { opacity: 1; transform: translateY(0); }

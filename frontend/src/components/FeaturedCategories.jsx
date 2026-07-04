@@ -131,7 +131,7 @@ const FeaturedCategories = () => {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 sm:mb-8">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">
+              <span className="px-3 py-1 bg-[#F5EDFA] text-[#3E0765] text-xs font-semibold rounded-full">
                 Best Sellers
               </span>
               <span className="text-gray-300">|</span>
@@ -140,7 +140,7 @@ const FeaturedCategories = () => {
               </span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
-              Featured <span className="text-blue-600">Products</span>
+              Featured <span className="text-[#3E0765]">Products</span>
             </h2>
             <p className="text-sm text-gray-500 mt-1">
               Top picks in Phones & Laptops
@@ -148,7 +148,7 @@ const FeaturedCategories = () => {
           </div>
           <button 
             onClick={(e) => handleButtonClick('View All Products', e)}
-            className="group inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors whitespace-nowrap"
+            className="group inline-flex items-center gap-2 text-sm font-semibold text-[#3E0765] hover:text-[#2D054A] transition-colors whitespace-nowrap"
           >
             View All
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -194,12 +194,12 @@ const FeaturedCategories = () => {
               <div className="p-3 sm:p-4">
                 {/* Product Name and Quick Add Icon */}
                 <div className="flex items-start justify-between gap-2">
-                  <h3 className="text-xs sm:text-sm font-semibold text-gray-900 line-clamp-1 group-hover:text-blue-600 transition-colors flex-1">
+                  <h3 className="text-xs sm:text-sm font-semibold text-gray-900 line-clamp-1 group-hover:text-[#3E0765] transition-colors flex-1">
                     {product.name}
                   </h3>
                   <button 
                     onClick={(e) => handleButtonClick(`Quick Add - ${product.name}`, e)}
-                    className="p-1.5 sm:p-2 bg-blue-50 hover:bg-blue-100 text-blue-600 rounded-lg transition-all duration-300 hover:scale-110 flex-shrink-0"
+                    className="p-1.5 sm:p-2 bg-[#F5EDFA] hover:bg-[#3E0765] hover:text-white text-[#3E0765] rounded-lg transition-all duration-300 hover:scale-110 flex-shrink-0"
                     aria-label="Quick add to cart"
                   >
                     <ShoppingBag size={14} className="sm:w-4 sm:h-4" />
@@ -237,13 +237,24 @@ const FeaturedCategories = () => {
         <div className="mt-6 sm:mt-8 text-center">
           <button 
             onClick={(e) => handleButtonClick('Load More Products', e)}
-            className="group px-6 sm:px-8 py-2.5 sm:py-3 bg-white border-2 border-gray-200 text-gray-700 font-semibold rounded-xl hover:border-blue-500 hover:text-blue-600 transition-all duration-300 hover:shadow-lg text-sm sm:text-base"
+            className="group px-6 sm:px-8 py-2.5 sm:py-3 bg-white border-2 border-gray-200 text-gray-700 font-semibold rounded-xl hover:border-[#3E0765] hover:text-[#3E0765] transition-all duration-300 hover:shadow-lg text-sm sm:text-base"
           >
             Load More Products
             <ArrowRight size={16} className="inline ml-2 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
       </div>
+
+      {/* CSS Animation */}
+      <style>{`
+        @keyframes slideDown {
+          from { opacity: 0; transform: translateY(-20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-slideDown {
+          animation: slideDown 0.3s ease-out;
+        }
+      `}</style>
     </section>
   );
 };

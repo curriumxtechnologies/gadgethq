@@ -14,7 +14,7 @@ const Hero = () => {
       subtitle: 'Up to 70% off on top brands. Limited time only!',
       cta: 'Shop Now',
       image: 'https://images.unsplash.com/photo-1498049794561-7780e7231661?w=600&auto=format&fit=crop',
-      color: 'from-blue-600 to-purple-600',
+      color: 'from-[#3E0765] to-[#5A0A94]',
     },
     {
       id: 2,
@@ -23,7 +23,7 @@ const Hero = () => {
       subtitle: 'Discover the newest gadgets from global brands',
       cta: 'Explore Collection',
       image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=600&auto=format&fit=crop',
-      color: 'from-pink-500 to-rose-600',
+      color: 'from-[#3E0765] to-[#7B2FBE]',
     },
     {
       id: 3,
@@ -32,7 +32,7 @@ const Hero = () => {
       subtitle: 'Transform your lifestyle with cutting-edge technology',
       cta: 'View Deals',
       image: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=600&auto=format&fit=crop',
-      color: 'from-emerald-500 to-teal-600',
+      color: 'from-[#3E0765] to-[#9B4DCA]',
     },
   ];
 
@@ -75,10 +75,10 @@ const Hero = () => {
     <section className="relative bg-gradient-to-br from-gray-50 to-white overflow-hidden">
       {/* Popup Notification */}
       {popup.show && (
-        <div className="fixed top-20 left-1/2 -translate-x-1/2 z-[100] animate-slideDown">
-          <div className="flex items-center gap-3 bg-gray-900 text-white px-6 py-3 rounded-xl shadow-2xl border border-gray-700">
+        <div className="fixed top-20 left-0 right-0 z-[100] flex justify-center px-4 pointer-events-none animate-slideDown">
+          <div className="flex items-center gap-3 bg-gray-900 text-white px-4 sm:px-6 py-3 rounded-xl shadow-2xl border border-gray-700 pointer-events-auto max-w-[90vw] sm:max-w-md">
             <AlertCircle size={20} className="text-[#3E0765] flex-shrink-0" />
-            <p className="text-sm font-medium">{popup.message}</p>
+            <p className="text-xs sm:text-sm font-medium truncate">{popup.message}</p>
           </div>
         </div>
       )}
@@ -104,8 +104,8 @@ const Hero = () => {
                   {/* Badge */}
                   <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-sm border border-gray-100/50">
                     <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#3E0765] opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-[#3E0765]"></span>
                     </span>
                     <span className="text-[10px] sm:text-sm font-semibold text-gray-700">{slide.badge}</span>
                   </div>
@@ -134,9 +134,9 @@ const Hero = () => {
                     
                     <button 
                       onClick={(e) => handleButtonClick('Watch Demo', e)}
-                      className="group inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-2.5 bg-white text-gray-700 text-sm font-semibold rounded-lg border-2 border-gray-200 hover:border-blue-500 hover:text-blue-600 transition-all duration-300 hover:-translate-y-0.5 shadow-sm"
+                      className="group inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-2.5 bg-white text-gray-700 text-sm font-semibold rounded-lg border-2 border-gray-200 hover:border-[#3E0765] hover:text-[#3E0765] transition-all duration-300 hover:-translate-y-0.5 shadow-sm"
                     >
-                      <Play size={14} className="sm:w-4 sm:h-4 fill-current group-hover:fill-blue-600" />
+                      <Play size={14} className="sm:w-4 sm:h-4 fill-current group-hover:fill-[#3E0765]" />
                       <span className="hidden sm:inline">Demo</span>
                     </button>
                   </div>
@@ -175,14 +175,14 @@ const Hero = () => {
                         alt={slide.title}
                         className="w-full h-[180px] sm:h-[220px] md:h-[240px] lg:h-[280px] xl:h-[340px] object-cover"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-tr from-black/5 to-transparent"></div>
+                      <div className={`absolute inset-0 bg-gradient-to-tr ${slide.color} opacity-10`}></div>
                     </div>
 
                     {/* Floating Cards - Hidden on mobile */}
                     <div className="absolute -right-2 -bottom-2 sm:-right-3 sm:-bottom-3 bg-white rounded-lg sm:rounded-xl shadow-lg p-2 sm:p-3 border border-gray-100/50 animate-bounce-slow hidden sm:block">
                       <div className="flex items-center gap-1.5 sm:gap-2">
-                        <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-50 rounded-lg flex items-center justify-center">
-                          <Truck className="w-3 h-3 sm:w-4 sm:h-4 text-blue-600" />
+                        <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#F5EDFA] rounded-lg flex items-center justify-center">
+                          <Truck className="w-3 h-3 sm:w-4 sm:h-4 text-[#3E0765]" />
                         </div>
                         <div>
                           <p className="text-[8px] sm:text-[10px] font-semibold text-gray-900">Free Ship</p>
@@ -193,8 +193,8 @@ const Hero = () => {
 
                     <div className="absolute -left-2 -top-2 sm:-left-3 sm:-top-3 bg-white rounded-lg sm:rounded-xl shadow-lg p-2 sm:p-3 border border-gray-100/50 animate-bounce-slow animation-delay-1000 hidden sm:block">
                       <div className="flex items-center gap-1.5 sm:gap-2">
-                        <div className="w-6 h-6 sm:w-8 sm:h-8 bg-green-50 rounded-lg flex items-center justify-center">
-                          <Shield className="w-3 h-3 sm:w-4 sm:h-4 text-green-600" />
+                        <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#F5EDFA] rounded-lg flex items-center justify-center">
+                          <Shield className="w-3 h-3 sm:w-4 sm:h-4 text-[#3E0765]" />
                         </div>
                         <div>
                           <p className="text-[8px] sm:text-[10px] font-semibold text-gray-900">Secure</p>
@@ -224,7 +224,7 @@ const Hero = () => {
                 }}
                 className={`transition-all duration-300 rounded-full ${
                   index === currentSlide 
-                    ? 'w-5 sm:w-6 h-1.5 bg-blue-600' 
+                    ? 'w-5 sm:w-6 h-1.5 bg-[#3E0765]' 
                     : 'w-1.5 h-1.5 bg-gray-300 hover:bg-gray-400'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
@@ -265,8 +265,8 @@ const Hero = () => {
                 onClick={(e) => handleButtonClick(item.label, e)}
                 className="flex items-center gap-1.5 sm:gap-2 group cursor-pointer"
               >
-                <div className="p-1.5 sm:p-2 bg-blue-50 rounded-lg group-hover:bg-blue-100 transition-colors">
-                  <item.icon className="w-3 h-3 sm:w-4 sm:h-4 text-blue-600" />
+                <div className="p-1.5 sm:p-2 bg-[#F5EDFA] rounded-lg group-hover:bg-[#3E0765] group-hover:text-white transition-colors">
+                  <item.icon className="w-3 h-3 sm:w-4 sm:h-4 text-[#3E0765] group-hover:text-white transition-colors" />
                 </div>
                 <div className="hidden sm:block">
                   <p className="text-[9px] sm:text-sm font-semibold text-gray-900">{item.label}</p>
@@ -281,6 +281,27 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      {/* CSS Animations */}
+      <style>{`
+        @keyframes bounce-slow {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-6px); }
+        }
+        @keyframes slideDown {
+          from { opacity: 0; transform: translateY(-20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-bounce-slow {
+          animation: bounce-slow 3s ease-in-out infinite;
+        }
+        .animation-delay-1000 {
+          animation-delay: 1s;
+        }
+        .animate-slideDown {
+          animation: slideDown 0.3s ease-out;
+        }
+      `}</style>
     </section>
   );
 };

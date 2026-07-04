@@ -35,7 +35,7 @@ const SpecialOffer = () => {
       discount: '30% OFF',
       image: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=600&auto=format&fit=crop',
       badge: '🔥 Hot Deal',
-      color: 'from-blue-600 to-purple-600',
+      color: 'from-[#3E0765] to-[#7B2FBE]',
       features: ['UK Used', '1 Year Warranty', 'Free Delivery'],
     },
     {
@@ -48,7 +48,7 @@ const SpecialOffer = () => {
       discount: '17% OFF',
       image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&auto=format&fit=crop',
       badge: '⚡ Flash Sale',
-      color: 'from-pink-500 to-rose-600',
+      color: 'from-[#3E0765] to-[#9B4DCA]',
       features: ['UK Used', '2 Year Warranty', 'Free AirPods'],
     },
     {
@@ -61,7 +61,7 @@ const SpecialOffer = () => {
       discount: '25% OFF',
       image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=600&auto=format&fit=crop',
       badge: '🎯 Weekend Deal',
-      color: 'from-emerald-500 to-teal-600',
+      color: 'from-[#3E0765] to-[#5A0A94]',
       features: ['Brand New', '6 Months Prime', 'Free Case'],
     },
   ];
@@ -121,10 +121,10 @@ const SpecialOffer = () => {
     <section className="py-8 sm:py-12 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
       {/* Popup Notification */}
       {popup.show && (
-        <div className="fixed top-20 left-1/2 -translate-x-1/2 z-[100] animate-slideDown">
-          <div className="flex items-center gap-3 bg-gray-900 text-white px-6 py-3 rounded-xl shadow-2xl border border-gray-700">
+        <div className="fixed top-20 left-0 right-0 z-[100] flex justify-center px-4 pointer-events-none animate-slideDown">
+          <div className="flex items-center gap-3 bg-gray-900 text-white px-4 sm:px-6 py-3 rounded-xl shadow-2xl border border-gray-700 pointer-events-auto max-w-[90vw] sm:max-w-md">
             <AlertCircle size={20} className="text-[#3E0765] flex-shrink-0" />
-            <p className="text-sm font-medium">{popup.message}</p>
+            <p className="text-xs sm:text-sm font-medium truncate">{popup.message}</p>
           </div>
         </div>
       )}
@@ -144,7 +144,7 @@ const SpecialOffer = () => {
               </span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-white">
-              Special <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Offers</span>
+              Special <span className="text-[#3E0765]">Offers</span>
             </h2>
             <p className="text-sm text-gray-400 mt-1">
               Exclusive deals just for you
@@ -153,7 +153,7 @@ const SpecialOffer = () => {
           
           {/* Timer */}
           <div className="flex items-center gap-3 bg-white/5 backdrop-blur-sm px-4 py-2.5 rounded-xl border border-white/10">
-            <Clock size={16} className="text-blue-400" />
+            <Clock size={16} className="text-[#3E0765]" />
             <div className="flex items-center gap-1.5 sm:gap-2 text-white">
               <div className="text-center">
                 <div className="bg-white/10 rounded-lg px-1.5 sm:px-2 py-1 min-w-[28px] sm:min-w-[32px]">
@@ -226,9 +226,9 @@ const SpecialOffer = () => {
                       <div className="flex flex-wrap gap-2">
                         {offer.features.map((feature, index) => (
                           <span key={index} className="flex items-center gap-1.5 text-xs text-gray-300 bg-white/5 px-3 py-1.5 rounded-full border border-white/5">
-                            {index === 0 && <Truck size={12} className="text-blue-400" />}
-                            {index === 1 && <Shield size={12} className="text-green-400" />}
-                            {index === 2 && <Gift size={12} className="text-pink-400" />}
+                            {index === 0 && <Truck size={12} className="text-[#3E0765]" />}
+                            {index === 1 && <Shield size={12} className="text-[#3E0765]" />}
+                            {index === 2 && <Gift size={12} className="text-[#3E0765]" />}
                             {feature}
                           </span>
                         ))}
@@ -296,7 +296,7 @@ const SpecialOffer = () => {
                 onClick={() => setCurrentSlide(index)}
                 className={`transition-all duration-300 rounded-full ${
                   index === currentSlide 
-                    ? 'w-8 h-2 bg-blue-500' 
+                    ? 'w-8 h-2 bg-[#3E0765]' 
                     : 'w-2 h-2 bg-gray-600 hover:bg-gray-500'
                 }`}
               />
@@ -316,8 +316,8 @@ const SpecialOffer = () => {
               onClick={(e) => handleButtonClick(item.label, e)}
               className="flex items-center gap-3 bg-white/5 backdrop-blur-sm p-3 sm:p-4 rounded-xl border border-white/5 hover:bg-white/10 transition-all duration-300 cursor-pointer"
             >
-              <div className="p-2 bg-blue-500/20 rounded-lg">
-                <item.icon size={18} className="text-blue-400" />
+              <div className="p-2 bg-[#3E0765]/20 rounded-lg">
+                <item.icon size={18} className="text-[#3E0765]" />
               </div>
               <div>
                 <p className="text-xs sm:text-sm font-semibold text-white">{item.label}</p>
@@ -327,6 +327,17 @@ const SpecialOffer = () => {
           ))}
         </div>
       </div>
+
+      {/* CSS Animation */}
+      <style>{`
+        @keyframes slideDown {
+          from { opacity: 0; transform: translateY(-20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-slideDown {
+          animation: slideDown 0.3s ease-out;
+        }
+      `}</style>
     </section>
   );
 };

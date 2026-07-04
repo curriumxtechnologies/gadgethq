@@ -30,7 +30,7 @@ const NewArrivals = () => {
       reviews: 234,
       image: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&auto=format&fit=crop',
       badge: 'New',
-      badgeColor: 'bg-blue-500',
+      badgeColor: 'bg-[#3E0765]',
       isNew: true,
       featured: true,
     },
@@ -44,7 +44,7 @@ const NewArrivals = () => {
       reviews: 189,
       image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&auto=format&fit=crop',
       badge: 'Just In',
-      badgeColor: 'bg-purple-500',
+      badgeColor: 'bg-[#3E0765]',
       isNew: true,
       featured: false,
     },
@@ -58,7 +58,7 @@ const NewArrivals = () => {
       reviews: 312,
       image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&auto=format&fit=crop',
       badge: 'New',
-      badgeColor: 'bg-blue-500',
+      badgeColor: 'bg-[#3E0765]',
       isNew: true,
       featured: true,
     },
@@ -72,7 +72,7 @@ const NewArrivals = () => {
       reviews: 156,
       image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=400&auto=format&fit=crop',
       badge: 'New',
-      badgeColor: 'bg-blue-500',
+      badgeColor: 'bg-[#3E0765]',
       isNew: true,
       featured: false,
     },
@@ -86,7 +86,7 @@ const NewArrivals = () => {
       reviews: 143,
       image: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&auto=format&fit=crop',
       badge: 'Latest',
-      badgeColor: 'bg-green-500',
+      badgeColor: 'bg-[#3E0765]',
       isNew: true,
       featured: false,
     },
@@ -100,7 +100,7 @@ const NewArrivals = () => {
       reviews: 201,
       image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=400&auto=format&fit=crop',
       badge: 'New',
-      badgeColor: 'bg-blue-500',
+      badgeColor: 'bg-[#3E0765]',
       isNew: true,
       featured: false,
     },
@@ -114,7 +114,7 @@ const NewArrivals = () => {
       reviews: 98,
       image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&auto=format&fit=crop',
       badge: 'Premium',
-      badgeColor: 'bg-amber-500',
+      badgeColor: 'bg-[#3E0765]',
       isNew: false,
       featured: true,
     },
@@ -128,7 +128,7 @@ const NewArrivals = () => {
       reviews: 167,
       image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=400&auto=format&fit=crop',
       badge: 'New',
-      badgeColor: 'bg-blue-500',
+      badgeColor: 'bg-[#3E0765]',
       isNew: true,
       featured: false,
     },
@@ -173,10 +173,10 @@ const NewArrivals = () => {
     <section className="py-8 sm:py-12 bg-gradient-to-b from-white to-gray-50">
       {/* Popup Notification */}
       {popup.show && (
-        <div className="fixed top-20 left-1/2 -translate-x-1/2 z-[100] animate-slideDown">
-          <div className="flex items-center gap-3 bg-gray-900 text-white px-6 py-3 rounded-xl shadow-2xl border border-gray-700">
+        <div className="fixed top-20 left-0 right-0 z-[100] flex justify-center px-4 pointer-events-none animate-slideDown">
+          <div className="flex items-center gap-3 bg-gray-900 text-white px-4 sm:px-6 py-3 rounded-xl shadow-2xl border border-gray-700 pointer-events-auto max-w-[90vw] sm:max-w-md">
             <AlertCircle size={20} className="text-[#3E0765] flex-shrink-0" />
-            <p className="text-sm font-medium">{popup.message}</p>
+            <p className="text-xs sm:text-sm font-medium truncate">{popup.message}</p>
           </div>
         </div>
       )}
@@ -186,18 +186,18 @@ const NewArrivals = () => {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 sm:mb-8">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs font-semibold rounded-full flex items-center gap-1">
+              <span className="px-3 py-1 bg-[#3E0765] text-white text-xs font-semibold rounded-full flex items-center gap-1">
                 <Sparkles size={12} />
                 New Arrivals
               </span>
               <span className="text-gray-300">|</span>
               <span className="flex items-center gap-1 text-xs text-gray-500">
-                <Clock size={14} className="text-blue-500" />
+                <Clock size={14} className="text-[#3E0765]" />
                 Fresh from the factory
               </span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
-              New <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Arrivals</span>
+              New <span className="text-[#3E0765]">Arrivals</span>
             </h2>
             <p className="text-sm text-gray-500 mt-1">
               Discover the latest tech products
@@ -208,7 +208,7 @@ const NewArrivals = () => {
             {/* Featured Filter */}
             <button 
               onClick={(e) => handleButtonClick('Featured Filter', e)}
-              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 text-blue-600 text-xs font-semibold rounded-lg border border-blue-200"
+              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-[#F5EDFA] text-[#3E0765] text-xs font-semibold rounded-lg border border-[#3E0765]/20"
             >
               <TrendingUp size={14} />
               Featured
@@ -216,7 +216,7 @@ const NewArrivals = () => {
             
             <button 
               onClick={(e) => handleButtonClick('View All New Arrivals', e)}
-              className="group inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors whitespace-nowrap"
+              className="group inline-flex items-center gap-2 text-sm font-semibold text-[#3E0765] hover:text-[#2D054A] transition-colors whitespace-nowrap"
             >
               View All
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -299,7 +299,7 @@ const NewArrivals = () => {
                 <div className="flex items-start justify-between gap-2">
                   <div className="flex-1 min-w-0">
                     <p className="text-[10px] sm:text-xs text-gray-400">{product.category}</p>
-                    <h3 className="text-xs sm:text-sm font-semibold text-gray-900 line-clamp-1 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-xs sm:text-sm font-semibold text-gray-900 line-clamp-1 group-hover:text-[#3E0765] transition-colors">
                       {product.name}
                     </h3>
                   </div>
@@ -323,7 +323,7 @@ const NewArrivals = () => {
                 {/* Add to Cart Button */}
                 <button 
                   onClick={(e) => handleButtonClick(`Add to Cart - ${product.name}`, e)}
-                  className="w-full mt-2 sm:mt-3 py-1.5 sm:py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-[10px] sm:text-xs font-semibold rounded-lg hover:shadow-md transition-all duration-300 hover:-translate-y-0.5"
+                  className="w-full mt-2 sm:mt-3 py-1.5 sm:py-2 bg-[#3E0765] hover:bg-[#2D054A] text-white text-[10px] sm:text-xs font-semibold rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5"
                 >
                   Add to Cart
                 </button>
@@ -340,7 +340,7 @@ const NewArrivals = () => {
             className={`p-2 rounded-lg border transition-all duration-300 ${
               currentPage === 0
                 ? 'border-gray-200 text-gray-300 cursor-not-allowed'
-                : 'border-gray-300 text-gray-600 hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50'
+                : 'border-gray-300 text-gray-600 hover:border-[#3E0765] hover:text-[#3E0765] hover:bg-[#F5EDFA]'
             }`}
           >
             <ChevronLeft size={18} />
@@ -352,8 +352,8 @@ const NewArrivals = () => {
               onClick={() => setCurrentPage(index)}
               className={`w-8 h-8 sm:w-9 sm:h-9 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-300 ${
                 currentPage === index
-                  ? 'bg-blue-600 text-white shadow-md'
-                  : 'text-gray-600 hover:bg-gray-100'
+                  ? 'bg-[#3E0765] text-white shadow-md'
+                  : 'text-gray-600 hover:bg-[#F5EDFA] hover:text-[#3E0765]'
               }`}
             >
               {index + 1}
@@ -366,7 +366,7 @@ const NewArrivals = () => {
             className={`p-2 rounded-lg border transition-all duration-300 ${
               currentPage === totalPages - 1
                 ? 'border-gray-200 text-gray-300 cursor-not-allowed'
-                : 'border-gray-300 text-gray-600 hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50'
+                : 'border-gray-300 text-gray-600 hover:border-[#3E0765] hover:text-[#3E0765] hover:bg-[#F5EDFA]'
             }`}
           >
             <ChevronRight size={18} />
@@ -374,7 +374,7 @@ const NewArrivals = () => {
         </div>
 
         {/* Bottom Banner - Newsletter */}
-        <div className="mt-6 sm:mt-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-4 sm:p-6 text-white relative overflow-hidden">
+        <div className="mt-6 sm:mt-8 bg-[#3E0765] rounded-2xl p-4 sm:p-6 text-white relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute -top-20 -right-20 w-64 h-64 bg-white rounded-full blur-3xl"></div>
             <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-white rounded-full blur-3xl"></div>
@@ -399,7 +399,7 @@ const NewArrivals = () => {
               />
               <button 
                 onClick={(e) => handleButtonClick('Subscribe to Newsletter', e)}
-                className="px-6 py-2.5 bg-white text-blue-600 font-semibold rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 text-sm whitespace-nowrap"
+                className="px-6 py-2.5 bg-white text-[#3E0765] font-semibold rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 text-sm whitespace-nowrap"
               >
                 Subscribe
               </button>
@@ -407,6 +407,17 @@ const NewArrivals = () => {
           </div>
         </div>
       </div>
+
+      {/* CSS Animation */}
+      <style>{`
+        @keyframes slideDown {
+          from { opacity: 0; transform: translateY(-20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-slideDown {
+          animation: slideDown 0.3s ease-out;
+        }
+      `}</style>
     </section>
   );
 };
