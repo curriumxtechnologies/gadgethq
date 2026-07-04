@@ -304,7 +304,7 @@ const SpecialOffer = () => {
           </div>
         </div>
 
-        {/* Bottom CTA Banner */}
+        {/* Bottom CTA Banner - Only icon color changed to white */}
         <div className="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
           {[
             { icon: Truck, label: 'Free Shipping', desc: 'On orders over $50' },
@@ -317,7 +317,7 @@ const SpecialOffer = () => {
               className="flex items-center gap-3 bg-white/5 backdrop-blur-sm p-3 sm:p-4 rounded-xl border border-white/5 hover:bg-white/10 transition-all duration-300 cursor-pointer"
             >
               <div className="p-2 bg-[#3E0765]/20 rounded-lg">
-                <item.icon size={18} className="text-[#3E0765]" />
+                <item.icon size={18} className="text-white" />
               </div>
               <div>
                 <p className="text-xs sm:text-sm font-semibold text-white">{item.label}</p>
