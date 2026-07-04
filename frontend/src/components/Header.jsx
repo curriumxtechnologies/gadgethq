@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, ChevronDown, ShoppingCart, Heart, User, Menu, X, Globe, DollarSign, Phone, AlertCircle, Clock, MapPin } from 'lucide-react';
+import { Search, ChevronDown, ShoppingCart, Heart, User, Menu, X, Phone, AlertCircle, Clock, MapPin } from 'lucide-react';
 import logo from '../assets/images/logo.jpg';
 
 const Header = () => {
@@ -69,30 +69,35 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Main Header */}
+      {/* Main Header - FIXED */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-16 md:h-20 gap-4">
-          {/* Mobile Menu Button */}
-          <button 
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 -ml-2 rounded-lg hover:bg-gray-100 transition-colors"
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+        <div className="flex items-center justify-between h-16 md:h-20">
+          {/* Left side: Menu + Logo - FIXED: wrapped together */}
+          <div className="flex items-center gap-1 sm:gap-2">
+            {/* Mobile Menu Button - FIXED: removed negative margin */}
+            <button 
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
 
-          {/* Logo */}
-          <div className="flex-shrink-0 flex items-center gap-2">
-            <img 
-              src={logo} 
-              alt="Gadget Headquarters" 
-              className="h-10 md:h-12 w-auto object-contain"
-            />
-            <div className="block">
-              <h1 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 leading-tight">
-                Gadget HQ
-              </h1>
-              <p className="text-[8px] md:text-[10px] text-gray-500 leading-none">Nigeria Limited</p>
+            {/* Logo - FIXED: smaller gap */}
+            <div className="flex-shrink-0 flex items-center gap-1.5 sm:gap-2">
+              <img 
+                src={logo} 
+                alt="Gadget Headquarters" 
+                className="h-8 sm:h-10 md:h-12 w-auto object-contain"
+              />
+              <div className="block">
+                <h1 className="text-sm sm:text-lg md:text-xl font-bold text-gray-900 leading-tight">
+                  Gadget HQ
+                </h1>
+                <p className="text-[7px] sm:text-[8px] md:text-[10px] text-gray-500 leading-none">
+                  Nigeria Limited
+                </p>
+              </div>
             </div>
           </div>
 
@@ -124,14 +129,14 @@ const Header = () => {
           </div>
 
           {/* Right Actions */}
-          <div className="flex items-center gap-1 md:gap-3">
+          <div className="flex items-center gap-0.5 sm:gap-1 md:gap-3">
             {/* Mobile Search */}
             <button 
               onClick={() => setIsSearchOpen(!isSearchOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              className="md:hidden p-1.5 sm:p-2 rounded-lg hover:bg-gray-100 transition-colors"
               aria-label="Search"
             >
-              <Search size={22} />
+              <Search size={20} className="sm:w-[22px] sm:h-[22px]" />
             </button>
 
             {/* Compare - Desktop only */}
@@ -148,10 +153,10 @@ const Header = () => {
             {/* Wishlist */}
             <button 
               onClick={(e) => handleButtonClick('Wishlist', e)}
-              className="relative p-2 rounded-lg hover:bg-[#F5EDFA] transition-colors group"
+              className="relative p-1.5 sm:p-2 rounded-lg hover:bg-[#F5EDFA] transition-colors group"
             >
-              <Heart size={22} className="group-hover:text-[#3E0765] transition-colors" />
-              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center ring-2 ring-white">
+              <Heart size={20} className="sm:w-[22px] sm:h-[22px] group-hover:text-[#3E0765] transition-colors" />
+              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center ring-2 ring-white text-[8px] sm:text-[10px]">
                 0
               </span>
             </button>
@@ -159,10 +164,10 @@ const Header = () => {
             {/* Cart */}
             <button 
               onClick={(e) => handleButtonClick('Shopping Cart', e)}
-              className="relative p-2 rounded-lg hover:bg-[#F5EDFA] transition-colors group"
+              className="relative p-1.5 sm:p-2 rounded-lg hover:bg-[#F5EDFA] transition-colors group"
             >
-              <ShoppingCart size={22} className="group-hover:text-[#3E0765] transition-colors" />
-              <span className="absolute -top-1 -right-1 bg-[#3E0765] text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center ring-2 ring-white">
+              <ShoppingCart size={20} className="sm:w-[22px] sm:h-[22px] group-hover:text-[#3E0765] transition-colors" />
+              <span className="absolute -top-1 -right-1 bg-[#3E0765] text-white text-[10px] font-bold w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center ring-2 ring-white text-[8px] sm:text-[10px]">
                 2
               </span>
             </button>
