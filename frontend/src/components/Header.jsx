@@ -40,18 +40,18 @@ const Header = () => {
       {popup.show && (
         <div className="fixed top-20 left-0 right-0 z-[100] flex justify-center px-4 pointer-events-none animate-slideDown">
           <div className="flex items-center gap-3 bg-gray-900 text-white px-4 sm:px-6 py-3 rounded-xl shadow-2xl border border-gray-700 pointer-events-auto max-w-[90vw] sm:max-w-md">
-            <AlertCircle size={20} className="text-blue-400 flex-shrink-0" />
+            <AlertCircle size={20} className="text-[#3E0765] flex-shrink-0" />
             <p className="text-xs sm:text-sm font-medium truncate">{popup.message}</p>
           </div>
         </div>
       )}
 
       {/* Top Bar - Hidden on mobile */}
-      <div className="hidden md:block bg-gradient-to-r from-gray-50 to-white border-b border-gray-100">
+      <div className="hidden md:block bg-gradient-to-r from-[#F5EDFA] to-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex justify-between items-center h-9 text-xs text-gray-500">
             <span className="flex items-center gap-2">
-              <Phone size={12} className="text-blue-600" />
+              <Phone size={12} className="text-[#3E0765]" />
               🚚 FREE Delivery Nationwide
             </span>
             <div className="flex items-center gap-6">
@@ -59,9 +59,9 @@ const Header = () => {
               <span className="text-gray-300">|</span>
               <a 
                 href="tel:09020402329" 
-                className="hover:text-blue-600 transition-colors flex items-center gap-1"
+                className="hover:text-[#3E0765] transition-colors flex items-center gap-1"
               >
-                <Phone size={12} className="text-blue-600" />
+                <Phone size={12} className="text-[#3E0765]" />
                 0902 040 2329
               </a>
             </div>
@@ -111,11 +111,11 @@ const Header = () => {
               <input
                 type="text"
                 placeholder="Search for gadgets..."
-                className="w-full pl-44 pr-12 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
+                className="w-full pl-44 pr-12 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-[#3E0765] focus:ring-2 focus:ring-[#3E0765]/20 transition-all"
                 onFocus={() => showNotAvailable('Search')}
               />
               <button 
-                className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-gray-400 hover:text-blue-600 transition-colors"
+                className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-gray-400 hover:text-[#3E0765] transition-colors"
                 onClick={(e) => handleButtonClick('Search', e)}
               >
                 <Search size={20} />
@@ -137,7 +137,7 @@ const Header = () => {
             {/* Compare - Desktop only */}
             <button 
               onClick={(e) => handleButtonClick('Compare', e)}
-              className="hidden lg:flex items-center gap-1.5 px-3 py-2 text-sm text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
+              className="hidden lg:flex items-center gap-1.5 px-3 py-2 text-sm text-gray-700 hover:text-[#3E0765] hover:bg-[#F5EDFA] rounded-lg transition-all"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M16 3h3v3h-3zM8 3h3v3H8zM5 8h14v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8zM12 12v4"/>
@@ -148,9 +148,9 @@ const Header = () => {
             {/* Wishlist */}
             <button 
               onClick={(e) => handleButtonClick('Wishlist', e)}
-              className="relative p-2 rounded-lg hover:bg-blue-50 transition-colors group"
+              className="relative p-2 rounded-lg hover:bg-[#F5EDFA] transition-colors group"
             >
-              <Heart size={22} className="group-hover:text-blue-600 transition-colors" />
+              <Heart size={22} className="group-hover:text-[#3E0765] transition-colors" />
               <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center ring-2 ring-white">
                 0
               </span>
@@ -159,10 +159,10 @@ const Header = () => {
             {/* Cart */}
             <button 
               onClick={(e) => handleButtonClick('Shopping Cart', e)}
-              className="relative p-2 rounded-lg hover:bg-blue-50 transition-colors group"
+              className="relative p-2 rounded-lg hover:bg-[#F5EDFA] transition-colors group"
             >
-              <ShoppingCart size={22} className="group-hover:text-blue-600 transition-colors" />
-              <span className="absolute -top-1 -right-1 bg-blue-600 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center ring-2 ring-white">
+              <ShoppingCart size={22} className="group-hover:text-[#3E0765] transition-colors" />
+              <span className="absolute -top-1 -right-1 bg-[#3E0765] text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center ring-2 ring-white">
                 2
               </span>
             </button>
@@ -170,7 +170,7 @@ const Header = () => {
             {/* Account */}
             <button 
               onClick={(e) => handleButtonClick('Sign In', e)}
-              className="hidden sm:flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
+              className="hidden sm:flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#3E0765] hover:bg-[#F5EDFA] rounded-lg transition-all"
             >
               <User size={20} />
               <span className="hidden lg:inline">Sign In</span>
@@ -185,7 +185,7 @@ const Header = () => {
               <input
                 type="text"
                 placeholder="Search gadgets..."
-                className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[#3E0765] focus:ring-2 focus:ring-[#3E0765]/20"
                 autoFocus
                 onFocus={() => showNotAvailable('Search')}
               />
@@ -203,7 +203,7 @@ const Header = () => {
             <div className="relative">
               <button 
                 onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
-                className="flex items-center gap-2 px-5 py-1.5 bg-blue-600 text-white rounded-lg font-medium text-sm hover:bg-blue-700 transition-all shadow-sm hover:shadow-md"
+                className="flex items-center gap-2 px-5 py-1.5 bg-[#3E0765] text-white rounded-lg font-medium text-sm hover:bg-[#2D054A] transition-all shadow-sm hover:shadow-md"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <line x1="3" y1="12" x2="21" y2="12"/>
@@ -222,7 +222,7 @@ const Header = () => {
                       key={cat}
                       href="#" 
                       onClick={(e) => handleButtonClick(`Category: ${cat}`, e)}
-                      className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                      className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#F5EDFA] hover:text-[#3E0765] transition-colors"
                     >
                       {cat}
                     </a>
@@ -238,7 +238,7 @@ const Header = () => {
                   <a 
                     href="#" 
                     onClick={(e) => handleButtonClick(item, e)}
-                    className="px-4 py-1.5 rounded-lg text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all"
+                    className="px-4 py-1.5 rounded-lg text-gray-700 hover:text-[#3E0765] hover:bg-[#F5EDFA] transition-all"
                   >
                     {item}
                     {(item === 'Brands' || item === 'Shop') && <ChevronDown size={14} className="inline ml-1" />}
@@ -251,13 +251,13 @@ const Header = () => {
             <div className="ml-auto flex items-center gap-4 text-sm">
               <a 
                 href="tel:09020402329" 
-                className="text-gray-600 hover:text-blue-600 transition-colors flex items-center gap-1.5"
+                className="text-gray-600 hover:text-[#3E0765] transition-colors flex items-center gap-1.5"
               >
                 <Phone size={14} />
                 📞 0902 040 2329
               </a>
               <span className="text-gray-300">|</span>
-              <span className="text-blue-600 font-medium text-xs">
+              <span className="text-[#3E0765] font-medium text-xs">
                 ⭐ Certified Laptop Plug
               </span>
             </div>
@@ -277,7 +277,7 @@ const Header = () => {
                   key={cat}
                   href="#" 
                   onClick={(e) => handleButtonClick(`Category: ${cat}`, e)}
-                  className="block px-3 py-2.5 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                  className="block px-3 py-2.5 rounded-lg text-gray-700 hover:bg-[#F5EDFA] hover:text-[#3E0765] transition-colors"
                 >
                   {cat}
                 </a>
@@ -293,7 +293,7 @@ const Header = () => {
                   key={item}
                   href="#" 
                   onClick={(e) => handleButtonClick(item, e)}
-                  className="block px-3 py-2.5 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                  className="block px-3 py-2.5 rounded-lg text-gray-700 hover:bg-[#F5EDFA] hover:text-[#3E0765] transition-colors"
                 >
                   {item}
                 </a>
@@ -307,7 +307,7 @@ const Header = () => {
               <a 
                 href="#" 
                 onClick={(e) => handleButtonClick('Sign In', e)}
-                className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-700 hover:bg-[#F5EDFA] hover:text-[#3E0765] transition-colors"
               >
                 <User size={20} />
                 Sign In
@@ -315,14 +315,14 @@ const Header = () => {
               <a 
                 href="#" 
                 onClick={(e) => handleButtonClick('Wishlist', e)}
-                className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-700 hover:bg-[#F5EDFA] hover:text-[#3E0765] transition-colors"
               >
                 <Heart size={20} />
                 Wishlist
               </a>
               <a 
                 href="tel:09020402329" 
-                className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-700 hover:bg-[#F5EDFA] hover:text-[#3E0765] transition-colors"
               >
                 <Phone size={20} />
                 0902 040 2329
@@ -341,13 +341,38 @@ const Header = () => {
                 <MapPin size={16} />
                 Garrison, Port Harcourt, Nigeria
               </p>
-              <p className="text-xs text-blue-600 font-medium">
+              <p className="text-xs text-[#3E0765] font-medium">
                 ⭐ Certified Laptop Plug
               </p>
             </div>
           </div>
         </div>
       )}
+
+      {/* CSS Animations */}
+      <style jsx>{`
+        @keyframes slideDown {
+          from { opacity: 0; transform: translateY(-20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideRight {
+          from { opacity: 0; transform: translateX(-20px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(-10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-slideDown {
+          animation: slideDown 0.3s ease-out;
+        }
+        .animate-slideRight {
+          animation: slideRight 0.3s ease-out;
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.2s ease-out;
+        }
+      `}</style>
     </header>
   );
 };

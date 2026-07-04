@@ -41,3 +41,36 @@
   animation-delay: 1s;
 }
 
+/* Add to your index.css or App.css */
+:root {
+  --brand-primary: #3E0765;
+  --brand-primary-dark: #2D054A;
+  --brand-primary-light: #5A0A94;
+  --brand-primary-bg: #F5EDFA;
+}
+
+/* You can also use these classes */
+.bg-brand {
+  background-color: #3E0765;
+}
+.bg-brand-dark {
+  background-color: #2D054A;
+}
+.bg-brand-light {
+  background-color: #5A0A94;
+}
+.bg-brand-bg {
+  background-color: #F5EDFA;
+}
+.text-brand {
+  color: #3E0765;
+}
+.border-brand {
+  border-color: #3E0765;
+}
+.hover\:bg-brand:hover {
+  background-color: #3E0765;
+}
+.hover\:text-brand:hover {
+  color: #3E0765;
+}

@@ -120,7 +120,7 @@ const FeaturedCategories = () => {
       {popup.show && (
         <div className="fixed top-20 left-0 right-0 z-[100] flex justify-center px-4 pointer-events-none animate-slideDown">
           <div className="flex items-center gap-3 bg-gray-900 text-white px-4 sm:px-6 py-3 rounded-xl shadow-2xl border border-gray-700 pointer-events-auto max-w-[90vw] sm:max-w-md">
-            <AlertCircle size={20} className="text-blue-400 flex-shrink-0" />
+            <AlertCircle size={20} className="text-[#3E0765] flex-shrink-0" />
             <p className="text-xs sm:text-sm font-medium truncate">{popup.message}</p>
           </div>
         </div>
@@ -224,7 +224,7 @@ const FeaturedCategories = () => {
                 {/* Add to Cart Button */}
                 <button 
                   onClick={(e) => handleButtonClick(`Add to Cart - ${product.name}`, e)}
-                  className="w-full mt-2 sm:mt-3 py-1.5 sm:py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-[10px] sm:text-xs font-semibold rounded-lg hover:shadow-md transition-all duration-300 hover:-translate-y-0.5"
+                  className="w-full mt-2 sm:mt-3 py-1.5 sm:py-2 bg-[#3E0765] hover:bg-[#2D054A] text-white text-[10px] sm:text-xs font-semibold rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5"
                 >
                   Add to Cart
                 </button>

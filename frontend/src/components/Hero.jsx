@@ -77,7 +77,7 @@ const Hero = () => {
       {popup.show && (
         <div className="fixed top-20 left-1/2 -translate-x-1/2 z-[100] animate-slideDown">
           <div className="flex items-center gap-3 bg-gray-900 text-white px-6 py-3 rounded-xl shadow-2xl border border-gray-700">
-            <AlertCircle size={20} className="text-blue-400 flex-shrink-0" />
+            <AlertCircle size={20} className="text-[#3E0765] flex-shrink-0" />
             <p className="text-sm font-medium">{popup.message}</p>
           </div>
         </div>
@@ -126,7 +126,7 @@ const Hero = () => {
                   <div className="flex flex-wrap items-center gap-2 sm:gap-3 pt-1">
                     <button 
                       onClick={(e) => handleButtonClick(slide.cta, e)}
-                      className="group inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-sm font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+                      className="group inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-2.5 bg-[#3E0765] hover:bg-[#2D054A] text-white text-xs sm:text-sm font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
                     >
                       <span>{slide.cta}</span>
                       <ArrowRight size={14} className="sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />

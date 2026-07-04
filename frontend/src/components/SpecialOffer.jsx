@@ -123,7 +123,7 @@ const SpecialOffer = () => {
       {popup.show && (
         <div className="fixed top-20 left-1/2 -translate-x-1/2 z-[100] animate-slideDown">
           <div className="flex items-center gap-3 bg-gray-900 text-white px-6 py-3 rounded-xl shadow-2xl border border-gray-700">
-            <AlertCircle size={20} className="text-blue-400 flex-shrink-0" />
+            <AlertCircle size={20} className="text-[#3E0765] flex-shrink-0" />
             <p className="text-sm font-medium">{popup.message}</p>
           </div>
         </div>
@@ -237,7 +237,7 @@ const SpecialOffer = () => {
                       {/* CTA */}
                       <button 
                         onClick={(e) => handleButtonClick(`Shop Now - ${offer.title}`, e)}
-                        className="group inline-flex items-center gap-2 px-6 sm:px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-sm sm:text-base font-semibold rounded-xl hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
+                        className="group inline-flex items-center gap-2 px-6 sm:px-8 py-3 bg-[#3E0765] hover:bg-[#2D054A] text-white text-sm sm:text-base font-semibold rounded-xl hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
                       >
                         <ShoppingBag size={18} />
                         Shop Now
