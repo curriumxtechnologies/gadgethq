@@ -30,9 +30,9 @@ const SpecialOffer = () => {
       title: 'iPhone 15 Pro Max',
       subtitle: 'Limited Time Offer',
       description: 'Premium Apple smartphone with pro camera system and titanium design. UK Used - Like New',
-      price: '$1,199',
-      oldPrice: '$1,399',
-      discount: '30% OFF',
+      price: '₦1,250,000',
+      oldPrice: '₦1,850,000',
+      discount: '32% OFF',
       image: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=600&auto=format&fit=crop',
       badge: '🔥 Hot Deal',
       color: 'from-[#3E0765] to-[#7B2FBE]',
@@ -43,9 +43,9 @@ const SpecialOffer = () => {
       title: 'MacBook Pro 16" M3 Pro',
       subtitle: 'Flash Sale',
       description: 'M3 Pro chip with 36GB memory and 1TB SSD storage. UK Used - Excellent Condition',
-      price: '$2,499',
-      oldPrice: '$2,999',
-      discount: '17% OFF',
+      price: '₦2,800,000',
+      oldPrice: '₦3,500,000',
+      discount: '20% OFF',
       image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&auto=format&fit=crop',
       badge: '⚡ Flash Sale',
       color: 'from-[#3E0765] to-[#9B4DCA]',
@@ -56,9 +56,9 @@ const SpecialOffer = () => {
       title: 'Samsung Galaxy S24 Ultra',
       subtitle: 'Weekend Special',
       description: 'AI-powered smartphone with 200MP camera and S Pen included. Brand New.',
-      price: '$1,299',
-      oldPrice: '$1,499',
-      discount: '25% OFF',
+      price: '₦1,200,000',
+      oldPrice: '₦1,650,000',
+      discount: '27% OFF',
       image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=600&auto=format&fit=crop',
       badge: '🎯 Weekend Deal',
       color: 'from-[#3E0765] to-[#5A0A94]',
@@ -304,10 +304,10 @@ const SpecialOffer = () => {
           </div>
         </div>
 
-        {/* Bottom CTA Banner - Only icon color changed to white */}
+        {/* Bottom CTA Banner */}
         <div className="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
           {[
-            { icon: Truck, label: 'Free Shipping', desc: 'On orders over $50' },
+            { icon: Truck, label: 'Free Shipping', desc: 'On orders over ₦50,000' },
             { icon: Shield, label: 'Secure Payment', desc: '100% buyer protection' },
             { icon: Gift, label: 'Gift Wrapping', desc: 'Free for premium orders' },
           ].map((item, index) => (

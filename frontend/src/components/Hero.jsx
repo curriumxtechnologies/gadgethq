@@ -255,7 +255,7 @@ const Hero = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 py-2.5 sm:py-4">
             {[
-              { icon: Truck, label: 'Free Shipping', desc: 'Over $50' },
+              { icon: Truck, label: 'Free Shipping', desc: 'Over ₦50,000' },
               { icon: Shield, label: 'Secure Payment', desc: '100% protected' },
               { icon: ShoppingBag, label: '30-Day Returns', desc: 'Money back' },
               { icon: Star, label: '24/7 Support', desc: 'Dedicated help' },

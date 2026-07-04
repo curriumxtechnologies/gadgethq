@@ -24,8 +24,8 @@ const NewArrivals = () => {
       id: 1,
       name: 'iPhone 15 Pro Max - Titanium',
       category: 'Phones',
-      price: '$1,199',
-      oldPrice: '$1,399',
+      price: '₦1,850,000',
+      oldPrice: '₦2,100,000',
       rating: 4.9,
       reviews: 234,
       image: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&auto=format&fit=crop',
@@ -38,8 +38,8 @@ const NewArrivals = () => {
       id: 2,
       name: 'Samsung Galaxy S24 Ultra',
       category: 'Phones',
-      price: '$1,299',
-      oldPrice: '$1,499',
+      price: '₦1,550,000',
+      oldPrice: '₦1,800,000',
       rating: 4.8,
       reviews: 189,
       image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&auto=format&fit=crop',
@@ -52,8 +52,8 @@ const NewArrivals = () => {
       id: 3,
       name: 'MacBook Pro 16" M3 Pro',
       category: 'Laptops',
-      price: '$2,499',
-      oldPrice: '$2,799',
+      price: '₦3,200,000',
+      oldPrice: '₦3,600,000',
       rating: 4.9,
       reviews: 312,
       image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&auto=format&fit=crop',
@@ -66,8 +66,8 @@ const NewArrivals = () => {
       id: 4,
       name: 'Dell XPS 15 - 2024 Edition',
       category: 'Laptops',
-      price: '$1,899',
-      oldPrice: '$2,199',
+      price: '₦2,100,000',
+      oldPrice: '₦2,500,000',
       rating: 4.7,
       reviews: 156,
       image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=400&auto=format&fit=crop',
@@ -80,8 +80,8 @@ const NewArrivals = () => {
       id: 5,
       name: 'Google Pixel 8 Pro',
       category: 'Phones',
-      price: '$999',
-      oldPrice: '$1,199',
+      price: '₦1,200,000',
+      oldPrice: '₦1,400,000',
       rating: 4.6,
       reviews: 143,
       image: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&auto=format&fit=crop',
@@ -94,8 +94,8 @@ const NewArrivals = () => {
       id: 6,
       name: 'Lenovo ThinkPad X1 Carbon',
       category: 'Laptops',
-      price: '$1,699',
-      oldPrice: '$1,999',
+      price: '₦2,500,000',
+      oldPrice: '₦2,900,000',
       rating: 4.8,
       reviews: 201,
       image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=400&auto=format&fit=crop',
@@ -108,8 +108,8 @@ const NewArrivals = () => {
       id: 7,
       name: 'Samsung Galaxy Z Fold 5',
       category: 'Phones',
-      price: '$1,799',
-      oldPrice: '$1,999',
+      price: '₦2,100,000',
+      oldPrice: '₦2,400,000',
       rating: 4.7,
       reviews: 98,
       image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&auto=format&fit=crop',
@@ -122,8 +122,8 @@ const NewArrivals = () => {
       id: 8,
       name: 'HP Spectre x360 16"',
       category: 'Laptops',
-      price: '$1,599',
-      oldPrice: '$1,899',
+      price: '₦1,900,000',
+      oldPrice: '₦2,200,000',
       rating: 4.5,
       reviews: 167,
       image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=400&auto=format&fit=crop',
@@ -154,7 +154,6 @@ const NewArrivals = () => {
     e.stopPropagation();
     const product = products.find(p => p.id === id);
     showNotAvailable(`Wishlist - ${product.name}`);
-    // Keep the wishlist toggle functional for UI feedback
     setWishlist(prev => 
       prev.includes(id) 
         ? prev.filter(item => item !== id)
@@ -205,7 +204,6 @@ const NewArrivals = () => {
           </div>
           
           <div className="flex items-center gap-3">
-            {/* Featured Filter */}
             <button 
               onClick={(e) => handleButtonClick('Featured Filter', e)}
               className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-[#F5EDFA] text-[#3E0765] text-xs font-semibold rounded-lg border border-[#3E0765]/20"
@@ -299,7 +297,7 @@ const NewArrivals = () => {
                 <div className="flex items-start justify-between gap-2">
                   <div className="flex-1 min-w-0">
                     <p className="text-[10px] sm:text-xs text-gray-400">{product.category}</p>
-                    <h3 className="text-xs sm:text-sm font-semibold text-gray-900 line-clamp-1 group-hover:text-[#3E0765] transition-colors">
+                    <h3 className="text-xs sm:text-sm font-semibold text-gray-900 line-clamp-2 sm:line-clamp-1 group-hover:text-[#3E0765] transition-colors break-words">
                       {product.name}
                     </h3>
                   </div>
