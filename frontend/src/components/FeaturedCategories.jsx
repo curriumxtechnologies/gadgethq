@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { ArrowRight, Star, ShoppingBag, Eye, AlertCircle } from 'lucide-react';
+import { ArrowRight, Star, ShoppingBag, Heart, AlertCircle } from 'lucide-react';
 
 const FeaturedCategories = () => {
   const [hoveredId, setHoveredId] = useState(null);
+  const [wishlist, setWishlist] = useState([]);
   const [popup, setPopup] = useState({ show: false, message: '' });
 
   const products = [
@@ -15,8 +16,6 @@ const FeaturedCategories = () => {
       rating: 4.9,
       reviews: 234,
       image: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&auto=format&fit=crop',
-      badge: 'New',
-      badgeColor: 'bg-blue-500',
     },
     {
       id: 2,
@@ -27,8 +26,6 @@ const FeaturedCategories = () => {
       rating: 4.8,
       reviews: 189,
       image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&auto=format&fit=crop',
-      badge: 'Sale',
-      badgeColor: 'bg-red-500',
     },
     {
       id: 3,
@@ -39,8 +36,6 @@ const FeaturedCategories = () => {
       rating: 4.9,
       reviews: 312,
       image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&auto=format&fit=crop',
-      badge: 'Popular',
-      badgeColor: 'bg-purple-500',
     },
     {
       id: 4,
@@ -51,8 +46,6 @@ const FeaturedCategories = () => {
       rating: 4.7,
       reviews: 156,
       image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=400&auto=format&fit=crop',
-      badge: 'Sale',
-      badgeColor: 'bg-red-500',
     },
     {
       id: 5,
@@ -63,8 +56,6 @@ const FeaturedCategories = () => {
       rating: 4.6,
       reviews: 143,
       image: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&auto=format&fit=crop',
-      badge: 'New',
-      badgeColor: 'bg-blue-500',
     },
     {
       id: 6,
@@ -75,8 +66,6 @@ const FeaturedCategories = () => {
       rating: 4.8,
       reviews: 201,
       image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=400&auto=format&fit=crop',
-      badge: 'Top Rated',
-      badgeColor: 'bg-green-500',
     },
     {
       id: 7,
@@ -87,8 +76,6 @@ const FeaturedCategories = () => {
       rating: 4.7,
       reviews: 98,
       image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&auto=format&fit=crop',
-      badge: 'Premium',
-      badgeColor: 'bg-amber-500',
     },
     {
       id: 8,
@@ -99,8 +86,6 @@ const FeaturedCategories = () => {
       rating: 4.5,
       reviews: 167,
       image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=400&auto=format&fit=crop',
-      badge: 'Sale',
-      badgeColor: 'bg-red-500',
     },
   ];
 
@@ -119,14 +104,24 @@ const FeaturedCategories = () => {
     showNotAvailable(feature);
   };
 
+  const toggleWishlist = (id, e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setWishlist(prev => 
+      prev.includes(id) 
+        ? prev.filter(item => item !== id)
+        : [...prev, id]
+    );
+  };
+
   return (
     <section className="py-8 sm:py-12 bg-gradient-to-b from-gray-50 to-white">
       {/* Popup Notification */}
       {popup.show && (
-        <div className="fixed top-20 left-1/2 -translate-x-1/2 z-[100] animate-slideDown">
-          <div className="flex items-center gap-3 bg-gray-900 text-white px-6 py-3 rounded-xl shadow-2xl border border-gray-700">
+        <div className="fixed top-20 left-0 right-0 z-[100] flex justify-center px-4 pointer-events-none animate-slideDown">
+          <div className="flex items-center gap-3 bg-gray-900 text-white px-4 sm:px-6 py-3 rounded-xl shadow-2xl border border-gray-700 pointer-events-auto max-w-[90vw] sm:max-w-md">
             <AlertCircle size={20} className="text-blue-400 flex-shrink-0" />
-            <p className="text-sm font-medium">{popup.message}</p>
+            <p className="text-xs sm:text-sm font-medium truncate">{popup.message}</p>
           </div>
         </div>
       )}
@@ -177,26 +172,17 @@ const FeaturedCategories = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 
-                {/* Badge */}
-                <span className={`absolute top-2 left-2 ${product.badgeColor} text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg shadow-md`}>
-                  {product.badge}
-                </span>
-
-                {/* Quick View Button - Appears on hover */}
-                <div className={`absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 text-white`}>
-                  <button 
-                    onClick={(e) => handleButtonClick(`Quick View - ${product.name}`, e)}
-                    className="bg-white text-gray-900 p-2 sm:p-2.5 rounded-full shadow-lg hover:scale-110 transition-transform"
-                  >
-                    <Eye size={16} className="sm:w-5 sm:h-5" />
-                  </button>
-                  <button 
-                    onClick={(e) => handleButtonClick(`Quick Add - ${product.name}`, e)}
-                    className="bg-white text-gray-900 p-2 sm:p-2.5 rounded-full shadow-lg hover:scale-110 transition-transform"
-                  >
-                    <ShoppingBag size={16} className="sm:w-5 sm:h-5" />
-                  </button>
-                </div>
+                {/* Heart Icon - Top Right */}
+                <button 
+                  onClick={(e) => toggleWishlist(product.id, e)}
+                  className={`absolute top-2 right-2 p-1.5 sm:p-2 rounded-full backdrop-blur-sm transition-all duration-300 z-10 ${
+                    wishlist.includes(product.id)
+                      ? 'bg-red-500 text-white shadow-lg scale-110'
+                      : 'bg-white/80 text-gray-600 hover:bg-white hover:scale-110'
+                  }`}
+                >
+                  <Heart size={16} className="sm:w-5 sm:h-5" fill={wishlist.includes(product.id) ? 'currentColor' : 'none'} />
+                </button>
 
                 {/* Category Tag */}
                 <div className="absolute bottom-2 left-2 bg-black/60 backdrop-blur-sm text-white text-[8px] sm:text-[10px] px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full">
@@ -206,9 +192,19 @@ const FeaturedCategories = () => {
 
               {/* Product Info */}
               <div className="p-3 sm:p-4">
-                <h3 className="text-xs sm:text-sm font-semibold text-gray-900 line-clamp-1 group-hover:text-blue-600 transition-colors">
-                  {product.name}
-                </h3>
+                {/* Product Name and Quick Add Icon */}
+                <div className="flex items-start justify-between gap-2">
+                  <h3 className="text-xs sm:text-sm font-semibold text-gray-900 line-clamp-1 group-hover:text-blue-600 transition-colors flex-1">
+                    {product.name}
+                  </h3>
+                  <button 
+                    onClick={(e) => handleButtonClick(`Quick Add - ${product.name}`, e)}
+                    className="p-1.5 sm:p-2 bg-blue-50 hover:bg-blue-100 text-blue-600 rounded-lg transition-all duration-300 hover:scale-110 flex-shrink-0"
+                    aria-label="Quick add to cart"
+                  >
+                    <ShoppingBag size={14} className="sm:w-4 sm:h-4" />
+                  </button>
+                </div>
                 
                 {/* Rating */}
                 <div className="flex items-center gap-1 mt-1">
@@ -225,7 +221,7 @@ const FeaturedCategories = () => {
                   <span className="text-[10px] sm:text-xs text-gray-400 line-through">{product.oldPrice}</span>
                 </div>
 
-                {/* Add to Cart Button - Mobile friendly */}
+                {/* Add to Cart Button */}
                 <button 
                   onClick={(e) => handleButtonClick(`Add to Cart - ${product.name}`, e)}
                   className="w-full mt-2 sm:mt-3 py-1.5 sm:py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-[10px] sm:text-xs font-semibold rounded-lg hover:shadow-md transition-all duration-300 hover:-translate-y-0.5"

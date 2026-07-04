@@ -131,10 +131,35 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Social Links */}
+            {/* Social Links - Facebook, Instagram, TikTok */}
             <div className="flex items-center gap-3 pt-2">
+              {/* Facebook */}
               <a 
-                href="https://instagram.com/gadgethq_ph" 
+                href="https://www.facebook.com/people/Gadget-HQ-Laptop-Store-in-Port-Harcourt/61553658384384/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => handleButtonClick('Facebook', e)}
+                className="p-2 bg-gray-800 rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 hover:-translate-y-1"
+                aria-label="Facebook"
+              >
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="18" 
+                  height="18" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                >
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+              </a>
+
+              {/* Instagram */}
+              <a 
+                href="https://www.instagram.com/gadgethq.ng?igsh=MXg0NnkzbWRpbjN2bA=="
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => handleButtonClick('Instagram', e)}
@@ -155,6 +180,30 @@ const Footer = () => {
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
                   <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+              </a>
+
+              {/* TikTok */}
+              <a 
+                href="https://www.tiktok.com/@gadgethq.ng?_r=1&_t=ZS-97lNwCHUttv"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => handleButtonClick('TikTok', e)}
+                className="p-2 bg-gray-800 rounded-lg hover:bg-black hover:text-white transition-all duration-300 hover:-translate-y-1"
+                aria-label="TikTok"
+              >
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="18" 
+                  height="18" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                >
+                  <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
                 </svg>
               </a>
             </div>
@@ -330,24 +379,6 @@ const Footer = () => {
           </span>
         </div>
       </div>
-
-      {/* CSS Animation */}
-      <style>{`
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(-10px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes slideDown {
-          from { opacity: 0; transform: translateY(-20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fadeIn {
-          animation: fadeIn 0.3s ease-out;
-        }
-        .animate-slideDown {
-          animation: slideDown 0.3s ease-out;
-        }
-      `}</style>
     </footer>
   );
 };
