@@ -9,14 +9,10 @@ const Header = () => {
   const [popup, setPopup] = useState({ show: false, message: '' });
 
   const categories = [
-    'Smartphones', 
-    'Laptops', 
-    'Tablets', 
-    'Smartwatches', 
-    'Headphones', 
-    'Accessories',
-    'Gaming',
-    'Cameras'
+    'Phones',
+    'Laptops',
+    'Phone Accessories',
+    'Laptop Accessories'
   ];
 
   const showNotAvailable = (feature) => {
@@ -69,12 +65,12 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Main Header - FIXED */}
+      {/* Main Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Left side: Menu + Logo - FIXED: wrapped together */}
+          {/* Left side: Menu + Logo */}
           <div className="flex items-center gap-1 sm:gap-2">
-            {/* Mobile Menu Button - FIXED: removed negative margin */}
+            {/* Mobile Menu Button */}
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
@@ -83,7 +79,7 @@ const Header = () => {
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
 
-            {/* Logo - FIXED: smaller gap */}
+            {/* Logo */}
             <div className="flex-shrink-0 flex items-center gap-1.5 sm:gap-2">
               <img 
                 src={logo} 
