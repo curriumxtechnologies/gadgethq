@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ChevronRight, ShoppingBag, Truck, Shield, Star, ArrowRight, Play, ChevronLeft, AlertCircle } from 'lucide-react';
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [popup, setPopup] = useState({ show: false, message: '' });
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   const slides = [
     {
@@ -71,8 +73,32 @@ const Hero = () => {
     setIsPlaying(false);
   };
 
+  // Touch handlers for mobile swipe
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    touchEndX.current = e.changedTouches[0].clientX;
+    const diff = touchStartX.current - touchEndX.current;
+    // Minimum swipe distance of 50px
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        // Swipe left - next slide
+        nextSlide();
+      } else {
+        // Swipe right - previous slide
+        prevSlide();
+      }
+    }
+  };
+
   return (
-    <section className="relative bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+    <section 
+      className="relative bg-gradient-to-br from-gray-50 to-white overflow-hidden"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
       {/* Popup Notification */}
       {popup.show && (
         <div className="fixed top-20 left-0 right-0 z-[100] flex justify-center px-4 pointer-events-none animate-slideDown">
