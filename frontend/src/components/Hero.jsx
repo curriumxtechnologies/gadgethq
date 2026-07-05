@@ -15,7 +15,7 @@ const Hero = () => {
       title: 'Premium Gadgets at Best Prices',
       subtitle: 'Up to 70% off on top brands. Limited time only!',
       cta: 'Shop Now',
-      image: 'https://images.unsplash.com/photo-1498049794561-7780e7231661?w=600&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&auto=format&fit=crop', // Smartphone
       color: 'from-[#3E0765] to-[#5A0A94]',
     },
     {
@@ -24,7 +24,7 @@ const Hero = () => {
       title: 'Latest Tech in Stock',
       subtitle: 'Discover the newest gadgets from global brands',
       cta: 'Explore Collection',
-      image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=600&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&auto=format&fit=crop', // Laptop
       color: 'from-[#3E0765] to-[#7B2FBE]',
     },
     {
@@ -33,7 +33,7 @@ const Hero = () => {
       title: 'Smart Tech for Everyone',
       subtitle: 'Transform your lifestyle with cutting-edge technology',
       cta: 'View Deals',
-      image: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=600&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=600&auto=format&fit=crop', // Accessories (headphones, keyboard, gadgets)
       color: 'from-[#3E0765] to-[#9B4DCA]',
     },
   ];
