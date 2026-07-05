@@ -62,10 +62,8 @@ const Footer = () => {
   const categories = [
     { name: 'Smartphones', href: '#' },
     { name: 'Laptops', href: '#' },
-    { name: 'Tablets', href: '#' },
-    { name: 'Accessories', href: '#' },
-    { name: 'Smartwatches', href: '#' },
-    { name: 'Audio Devices', href: '#' },
+    { name: 'Phone Accessories', href: '#' },
+    { name: 'Laptop Accessories', href: '#' },
   ];
 
   return (
@@ -211,48 +209,53 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-white font-semibold text-lg mb-4 relative">
-              Quick Links
-              <span className="absolute bottom-0 left-0 w-8 h-0.5 bg-[#3E0765] mt-1"></span>
-            </h3>
-            <ul className="space-y-2.5">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <a 
-                    href={link.href} 
-                    onClick={(e) => handleButtonClick(link.name, e)}
-                    className="text-sm text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300 inline-flex items-center gap-1 group cursor-pointer"
-                  >
-                    <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Quick Links & Categories - FIXED: Side by side on mobile */}
+          <div className="sm:col-span-1 lg:col-span-2">
+            <div className="grid grid-cols-2 gap-6">
+              {/* Quick Links */}
+              <div>
+                <h3 className="text-white font-semibold text-lg mb-4 relative">
+                  Quick Links
+                  <span className="absolute bottom-0 left-0 w-8 h-0.5 bg-[#3E0765] mt-1"></span>
+                </h3>
+                <ul className="space-y-2.5">
+                  {quickLinks.map((link, index) => (
+                    <li key={index}>
+                      <a 
+                        href={link.href} 
+                        onClick={(e) => handleButtonClick(link.name, e)}
+                        className="text-sm text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300 inline-flex items-center gap-1 group cursor-pointer"
+                      >
+                        <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                        {link.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-          {/* Categories */}
-          <div>
-            <h3 className="text-white font-semibold text-lg mb-4 relative">
-              Categories
-              <span className="absolute bottom-0 left-0 w-8 h-0.5 bg-[#3E0765] mt-1"></span>
-            </h3>
-            <ul className="space-y-2.5">
-              {categories.map((category, index) => (
-                <li key={index}>
-                  <a 
-                    href={category.href} 
-                    onClick={(e) => handleButtonClick(`Category: ${category.name}`, e)}
-                    className="text-sm text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300 inline-flex items-center gap-1 group cursor-pointer"
-                  >
-                    <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                    {category.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
+              {/* Categories */}
+              <div>
+                <h3 className="text-white font-semibold text-lg mb-4 relative">
+                  Categories
+                  <span className="absolute bottom-0 left-0 w-8 h-0.5 bg-[#3E0765] mt-1"></span>
+                </h3>
+                <ul className="space-y-2.5">
+                  {categories.map((category, index) => (
+                    <li key={index}>
+                      <a 
+                        href={category.href} 
+                        onClick={(e) => handleButtonClick(`Category: ${category.name}`, e)}
+                        className="text-sm text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300 inline-flex items-center gap-1 group cursor-pointer"
+                      >
+                        <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                        {category.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
 
           {/* Newsletter */}
