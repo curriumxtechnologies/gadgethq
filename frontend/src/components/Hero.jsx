@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronRight, ShoppingBag, Truck, Shield, Star, ArrowRight, Play, ChevronLeft, AlertCircle } from 'lucide-react';
+import hero1 from '../assets/images/hero1.jpeg';
+import hero2 from '../assets/images/hero2.jpeg';
+import hero3 from '../assets/images/hero3.jpeg';
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -15,7 +18,7 @@ const Hero = () => {
       title: 'Premium Gadgets at Best Prices',
       subtitle: 'Up to 70% off on top brands. Limited time only!',
       cta: 'Shop Now',
-      image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&auto=format&fit=crop', // Smartphone
+      image: hero1,
       color: 'from-[#3E0765] to-[#5A0A94]',
     },
     {
@@ -24,7 +27,7 @@ const Hero = () => {
       title: 'Latest Tech in Stock',
       subtitle: 'Discover the newest gadgets from global brands',
       cta: 'Explore Collection',
-      image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&auto=format&fit=crop', // Laptop
+      image: hero2,
       color: 'from-[#3E0765] to-[#7B2FBE]',
     },
     {
@@ -33,7 +36,7 @@ const Hero = () => {
       title: 'Smart Tech for Everyone',
       subtitle: 'Transform your lifestyle with cutting-edge technology',
       cta: 'View Deals',
-      image: 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=600&auto=format&fit=crop', // Accessories (headphones, keyboard, gadgets)
+      image: hero3,
       color: 'from-[#3E0765] to-[#9B4DCA]',
     },
   ];
