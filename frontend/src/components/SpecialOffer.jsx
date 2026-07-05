@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   ArrowRight, 
   Clock, 
@@ -23,6 +23,8 @@ const SpecialOffer = () => {
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [popup, setPopup] = useState({ show: false, message: '' });
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   const offers = [
     {
@@ -117,6 +119,23 @@ const SpecialOffer = () => {
     setCurrentSlide((prev) => (prev - 1 + offers.length) % offers.length);
   };
 
+  // Touch handlers for mobile swipe
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    touchEndX.current = e.changedTouches[0].clientX;
+    const diff = touchStartX.current - touchEndX.current;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    }
+  };
+
   return (
     <section className="py-8 sm:py-12 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
       {/* Popup Notification */}
@@ -186,8 +205,12 @@ const SpecialOffer = () => {
           </div>
         </div>
 
-        {/* Offers Slider */}
-        <div className="relative">
+        {/* Offers Slider - Added touch events */}
+        <div 
+          className="relative"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           <div className="overflow-hidden">
             <div 
               className="flex transition-transform duration-500 ease-out"
